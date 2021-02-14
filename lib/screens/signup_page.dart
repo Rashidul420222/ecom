@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import '../constants.dart';
+import 'products_page.dart';
 
 class SignUpPage extends StatefulWidget {
+  static const String id = 'singUpPage';
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }
@@ -82,6 +84,8 @@ class _SignUpPageState extends State<SignUpPage> {
                 child: ElevatedButton(
                   onPressed: () {
                     _formKey.currentState.validate();
+                    Navigator.pushNamed(context, ProductPage.id);
+
                     print(
                         "Username : $_username, Password : $_password, Confirm Password : $_confirmPassword");
                   },
